@@ -1,0 +1,160 @@
+/* body */
+body {
+    margin: 0;
+    font-family: "Noto Sans KR", sans-serif;
+    background-color: #666;
+    color: white;
+}
+
+/* section */
+section {
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* btns */
+.btns {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+
+.btns__menu {
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn {
+    background: none;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: white;
+    color: black;
+}
+
+.wrapper {
+    padding: 20px;
+}
+
+/* home h1 h2 h3 */
+#home h1 {
+    font-size: 4em;
+}
+
+#home h2 {
+    font-size: 2.5em;
+}
+
+#home h3 {
+    font-size: 1.5em;
+}
+
+#about h1, #skills h1, #works h1, #contact h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+#about h3, #contact h3 {
+    font-size: 1.2em;
+}
+
+.skillsImgs, .worksImgs {
+    max-width: 80%;
+    height: auto;
+    margin-top: 20px;
+}
+
+/* ARROW_UP */
+.arrow-up {
+    position: fixed;
+    bottom: 5px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    background-color: #666;
+    color: white;
+    border-radius: 50%;
+    opacity: 0;
+    transition: .3s;
+}
+
+.arrow-up span {
+    font-size: 25px;
+}
+
+.arrow-up.show {
+    opacity: 1;
+}
+
+.btns.show {
+    opacity: 1;
+}
+
+/* skills */
+.skillsImgs {
+    opacity: 0;
+    transform: translateY(250px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.skillsImgs.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about-left, .about-right {
+    opacity: 0;
+    position: relative;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* about */
+.about-left {
+    transform: translateX(-250px);
+}
+
+.about-left.visible {
+    opacity: 3;
+    transform: translateX(0);
+}
+
+.about-right {
+    transform: translateX(250px);
+}
+
+.about-right.visible {
+    opacity: 3;
+    transform: translateX(0);
+}
+
+/* works */
+.worksImgs {
+    opacity: 0;
+    transform: translateY(250px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.worksImgs.visible {
+    opacity: 1;
+    transform: translateY(0);
+}

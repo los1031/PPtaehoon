@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- link css -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- link font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- link icon -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- <script> -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+</head>
+<body>
+
+    <!-- btns -->
+    <div class="btns">
+        <div class="container">
+            <div class="btns__menu">
+                <button class="btn home">Home</button>
+                <button class="btn about">About</button>
+                <button class="btn skills">Skills</button>
+                <button class="btn works">Works</button>
+                <button class="btn contact">Contact</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- home -->
+    <section id="home">
+        <div class="wrapper">
+            <h1>Hello!</h1>
+            <img src="./imgs/me.jpg" alt="" class="imgMe">
+            <h2>I'm Ahn Tae Hoon</h2>
+            <h3>I will Introduce my Portpolio</h3>
+        </div>
+    </section>
+
+    <!-- about -->
+    <section id="about">
+        <div class="wrapper">
+            <h1>About me</h1>
+            <h3><p class="about-left">I am Ahn Tae Hoon</p>
+                <p class="about-right">a Visual Communication Design major attending Korea Polytechnics University</p>
+            </h3>
+        </div>
+    </section>
+
+    <!-- skills -->
+    <section id="skills">
+        <div class="wrapper">
+            <h1>Skills</h1>
+            <img src="./imgs/630.png" alt="" class="skillsImgs">
+        </div>
+    </section>
+
+    <!-- works -->
+    <section id="works">
+        <div class="wrapper">
+            <h1>Works</h1>
+            <img src="./imgs/1000 커피.png" alt="" class="worksImgs">
+        </div>
+    </section>
+
+    <!-- contact -->
+    <section id="contact">
+        <div class="wrapper">
+            <h1>Contact</h1>
+            <h3><div class="e-mail">e-mail: spqkf123@naver.com</div></h3>
+            <h3><div class="kakao">kakao: R_Ros</div></h3>
+            <h3><div class="instagram">instagram: Ros_10_31</div></h3>
+        </div>
+    </section>
+
+    <!-- arrow-up -->
+    <button class="arrow-up">
+        <span class="material-symbols-outlined">
+            arrow_upward
+        </span>    
+    </button>
+
+    <script>
+        // btnHome
+        const btnHome = document.querySelector('.home');
+        const sectionHome = document.querySelector('#home');
+        btnHome.addEventListener('click', function() {
+            sectionHome.scrollIntoView({behavior:"smooth", block:"center"})
+        });
+
+        // btnAbout
+        const btnAbout = document.querySelector('.about');
+        const sectionAbout = document.querySelector('#about');
+        btnAbout.addEventListener('click', function() {
+            sectionAbout.scrollIntoView({behavior:"smooth", block:"center"})
+        });
+
+        // btnSkills
+        const btnSkills = document.querySelector('.skills');
+        const sectionSkills = document.querySelector('#skills');
+        btnSkills.addEventListener('click', function() {
+            sectionSkills.scrollIntoView({behavior:"smooth", block:"center"})
+        });
+
+        // btnWorks
+        const btnWorks = document.querySelector('.works');
+        const sectionWorks = document.querySelector('#works');
+        btnWorks.addEventListener('click', function() {
+            sectionWorks.scrollIntoView({behavior:"smooth", block:"center"})
+        });
+
+        // btnContact
+        const btnContact = document.querySelector('.contact');
+        const sectionContact = document.querySelector('#contact');
+        btnContact.addEventListener('click', function() {
+            sectionContact.scrollIntoView({behavior:"smooth", block:"center"})
+        });
+
+        // arrowUp
+        const arrowUp = document.querySelector('.arrow-up');
+
+document.addEventListener('scroll', function() {
+    console.log(window.scrollY);
+    if (window.scrollY > 300) {
+        arrowUp.classList.add('show')
+    } else {
+        arrowUp.classList.remove('show')
+    }
+arrowUp.addEventListener('click', function() {
+    sectionHome.scrollIntoView({behavior:"smooth",block:"center"});
+});
+});
+
+// skills
+document.addEventListener('DOMContentLoaded', function() {
+        const skillsImg = document.querySelector('.skillsImgs');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    skillsImg.classList.add('visible');
+                } else {
+                    skillsImg.classList.remove('visible');
+                }
+            });
+        });
+
+        observer.observe(skillsImg);
+    });
+    
+    document.addEventListener('DOMContentLoaded', function() {
+    const aboutLeft = document.querySelector('.about-left');
+    const aboutRight = document.querySelector('.about-right');
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            } else {
+                entry.target.classList.remove('visible');
+            }
+        });
+    });
+
+    observer.observe(aboutLeft);
+    observer.observe(aboutRight);
+});
+
+// about
+document.addEventListener('DOMContentLoaded', function() {
+    const aboutLeft = document.querySelector('.about-left');
+    const aboutRight = document.querySelector('.about-right');
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            } else {
+                entry.target.classList.remove('visible');
+            }
+        });
+    });
+
+    observer.observe(aboutLeft);
+    observer.observe(aboutRight);
+});
+
+// works
+document.addEventListener('DOMContentLoaded', function() {
+    const aboutLeft = document.querySelector('.about-left');
+    const aboutRight = document.querySelector('.about-right');
+    const worksImg = document.querySelector('.worksImgs');
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            } else {
+                entry.target.classList.remove('visible');
+            }
+        });
+    });
+
+    observer.observe(aboutLeft);
+    observer.observe(aboutRight);
+    observer.observe(worksImg);
+});
+    </script>
+
+    
+</body>
+</html>
